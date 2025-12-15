@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ciel Jets Landing Page Wireframe - UHNW Conversion</title>
+    <title>Ciel Jets Landing Page Wireframe</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -17,23 +17,6 @@
             background: #0a0a0a;
             color: #ffffff;
             line-height: 1.6;
-        }
-        
-        /* Wireframe Annotation Styles */
-        .wireframe-note {
-            background: #ffd700;
-            color: #000;
-            padding: 8px 12px;
-            font-size: 11px;
-            font-weight: 600;
-            position: absolute;
-            border-radius: 4px;
-            z-index: 100;
-            max-width: 200px;
-        }
-        
-        .wireframe-note::before {
-            content: "📌 ";
         }
         
         .section-label {
@@ -83,8 +66,14 @@
             gap: 10px;
         }
         
-        .phone-number::before {
-            content: "📞";
+        .phone-number svg {
+            width: 20px;
+            height: 20px;
+            stroke: #c9a962;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
         
         .btn-primary {
@@ -124,18 +113,6 @@
             right: 0;
             bottom: 0;
             background: linear-gradient(135deg, #0d1117 0%, #1a1a2e 50%, #0d1117 100%);
-        }
-        
-        .hero-bg::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="40" fill="rgba(255,255,255,0.03)">✈</text></svg>');
-            background-size: 200px;
-            opacity: 0.5;
         }
         
         .hero-content {
@@ -217,14 +194,18 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            color: rgba(255,255,255,0.5);
+            color: rgba(255,255,255,0.6);
             font-size: 13px;
         }
         
         .trust-item svg {
             width: 20px;
             height: 20px;
-            fill: #c9a962;
+            stroke: #c9a962;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
         
         /* Quote Form Section */
@@ -255,7 +236,7 @@
             font-weight: 600;
         }
         
-        .quote-content p {
+        .quote-content > p {
             color: rgba(255,255,255,0.7);
             font-size: 18px;
             margin-bottom: 32px;
@@ -275,11 +256,15 @@
             font-size: 16px;
         }
         
-        .quote-benefits li::before {
-            content: "✓";
-            color: #c9a962;
-            font-weight: bold;
-            font-size: 18px;
+        .quote-benefits li svg {
+            width: 22px;
+            height: 22px;
+            stroke: #c9a962;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            flex-shrink: 0;
         }
         
         .quote-form-container {
@@ -404,8 +389,24 @@
         }
         
         .pain-icon {
-            font-size: 32px;
+            width: 56px;
+            height: 56px;
+            background: rgba(201, 169, 98, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin-bottom: 20px;
+        }
+        
+        .pain-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: #c9a962;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
         
         .pain-card h3 {
@@ -581,6 +582,18 @@
             text-align: center;
         }
         
+        .quote-icon {
+            margin-bottom: 24px;
+        }
+        
+        .quote-icon svg {
+            width: 48px;
+            height: 48px;
+            stroke: #c9a962;
+            fill: none;
+            stroke-width: 1.5;
+        }
+        
         .testimonial-quote {
             font-size: 28px;
             font-weight: 300;
@@ -588,15 +601,6 @@
             line-height: 1.6;
             margin-bottom: 32px;
             color: rgba(255,255,255,0.9);
-        }
-        
-        .testimonial-quote::before {
-            content: '"';
-            font-size: 60px;
-            color: #c9a962;
-            display: block;
-            line-height: 1;
-            margin-bottom: 16px;
         }
         
         .testimonial-author {
@@ -785,15 +789,19 @@
 <body>
     <!-- Wireframe Header -->
     <div class="wireframe-overlay">
-        <div class="wireframe-title">CIEL JETS <span>Landing Page Wireframe</span> - UHNW Conversion Optimized</div>
-        <div class="wireframe-meta">Version 1.0 | December 2024 | Desktop + Mobile Responsive</div>
+        <div class="wireframe-title">CIEL JETS <span>Landing Page Wireframe</span></div>
     </div>
 
     <!-- Header -->
     <header>
         <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='40'><text y='28' font-size='24' font-weight='bold' fill='white' font-family='Arial'>CIEL JETS</text><text y='38' font-size='8' fill='white' font-family='Arial' letter-spacing='3'>LUXURY AVIATION</text></svg>" alt="Ciel Jets" class="logo">
         <div class="header-cta">
-            <a href="tel:+15618957000" class="phone-number">+1 (561) 895-7000</a>
+            <a href="tel:+15618957000" class="phone-number">
+                <svg viewBox="0 0 24 24">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                +1 (561) 895-7000
+            </a>
             <a href="#quote" class="btn-primary">Get Your Quote</a>
         </div>
     </header>
@@ -805,22 +813,33 @@
             <span class="section-label">Section 1: Hero</span>
             <p class="hero-tagline">Private Aviation, Perfected</p>
             <h1 class="hero-headline">Your Sky.<br><strong>Your Schedule.</strong></h1>
-            <p class="hero-subheadline">One call to your dedicated advisor. Immediate response. Transparent pricing. 11,000+ aircraft at your command.</p>
+            <p class="hero-subheadline">One call to your dedicated advisor. Immediate response. Transparent pricing. Over 11,000 aircraft ready when you are.</p>
             <div class="hero-cta-group">
                 <a href="#quote" class="btn-primary">Request Your Quote</a>
                 <a href="tel:+15618957000" class="btn-secondary">Call Now: 561-895-7000</a>
             </div>
             <div class="hero-trust">
                 <div class="trust-item">
-                    <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                    </svg>
                     24/7 Human Support
                 </div>
                 <div class="trust-item">
-                    <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        <polyline points="9 12 11 14 15 10"/>
+                    </svg>
                     No Hidden Fees
                 </div>
                 <div class="trust-item">
-                    <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    <svg viewBox="0 0 24 24">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
                     Direct Owner Network
                 </div>
             </div>
@@ -833,18 +852,33 @@
             <div class="quote-content">
                 <span class="section-label">Section 2: Quote Form + Value Props</span>
                 <h2>Get Your <strong>Personalized Quote</strong> in Minutes</h2>
-                <p>Tell us where you need to go. Your dedicated flight advisor will respond immediately with transparent pricing and aircraft options tailored to your journey.</p>
+                <p>Tell us where you need to go. Your dedicated flight advisor will respond right away with transparent pricing and aircraft options matched to your trip.</p>
                 <ul class="quote-benefits">
-                    <li>Speak with a real person, not a chatbot</li>
-                    <li>Transparent, all-inclusive pricing upfront</li>
-                    <li>Access to 11,000+ verified aircraft worldwide</li>
-                    <li>Direct relationships with jet owners for better rates</li>
-                    <li>White glove concierge from booking to landing</li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        Talk to a real person, not a chatbot
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        Clear, all-inclusive pricing from the start
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        Access over 11,000 verified aircraft worldwide
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        Direct relationships with owners for better rates
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        White glove service from booking to landing
+                    </li>
                 </ul>
             </div>
             <div class="quote-form-container">
                 <h3 class="form-title">Request Your Quote</h3>
-                <p class="form-subtitle">Response guaranteed within 15 minutes</p>
+                <p class="form-subtitle">We respond within 15 minutes, guaranteed</p>
                 <form>
                     <div class="form-row">
                         <div class="form-group">
@@ -882,15 +916,15 @@
                         <div class="form-group">
                             <label>Passengers</label>
                             <select>
-                                <option>1-4 passengers</option>
-                                <option>5-8 passengers</option>
-                                <option>9-14 passengers</option>
-                                <option>15+ passengers</option>
+                                <option>1 to 4 passengers</option>
+                                <option>5 to 8 passengers</option>
+                                <option>9 to 14 passengers</option>
+                                <option>15 or more passengers</option>
                             </select>
                         </div>
                     </div>
                     <button type="submit" class="btn-primary form-submit">Get My Quote Now</button>
-                    <p class="form-privacy">Your information is secure and will never be shared.</p>
+                    <p class="form-privacy">Your information stays secure and private.</p>
                 </form>
             </div>
         </div>
@@ -902,32 +936,54 @@
             <span class="section-label">Section 3: Pain Points + Solutions</span>
             <div class="pain-header">
                 <h2>Tired of These Charter Frustrations?</h2>
-                <p>We built Ciel Jets to solve every pain point in private aviation.</p>
+                <p>We built Ciel Jets to fix what others get wrong.</p>
             </div>
             <div class="pain-grid">
                 <div class="pain-card">
-                    <div class="pain-icon">⏰</div>
+                    <div class="pain-icon">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
                     <h3>Slow Response Times</h3>
-                    <p>Waiting hours or days for quotes while your schedule changes.</p>
-                    <p class="solution">Our Solution: Immediate human response, 24/7</p>
+                    <p>Waiting hours or even days for quotes while your plans keep changing.</p>
+                    <p class="solution">Our fix: A real person answers, 24 hours a day</p>
                 </div>
                 <div class="pain-card">
-                    <div class="pain-icon">👤</div>
-                    <h3>No Personalization</h3>
-                    <p>Treated like a transaction, not a valued client.</p>
-                    <p class="solution">Our Solution: Dedicated advisor who knows you</p>
+                    <div class="pain-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                    </div>
+                    <h3>No Personal Touch</h3>
+                    <p>Feeling like just another booking number instead of a valued client.</p>
+                    <p class="solution">Our fix: A dedicated advisor who knows you by name</p>
                 </div>
                 <div class="pain-card">
-                    <div class="pain-icon">💰</div>
+                    <div class="pain-icon">
+                        <svg viewBox="0 0 24 24">
+                            <line x1="12" y1="1" x2="12" y2="23"/>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                        </svg>
+                    </div>
                     <h3>Hidden Fees</h3>
-                    <p>Surprise charges that inflate the final bill.</p>
-                    <p class="solution">Our Solution: Transparent, all-in pricing</p>
+                    <p>Surprise charges that show up and inflate the final bill.</p>
+                    <p class="solution">Our fix: The price we quote is the price you pay</p>
                 </div>
                 <div class="pain-card">
-                    <div class="pain-icon">🔗</div>
-                    <h3>Fragmented Service</h3>
-                    <p>Juggling multiple providers for ground transport, catering, hotels.</p>
-                    <p class="solution">Our Solution: Complete luxury travel in one call</p>
+                    <div class="pain-icon">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="3" y="3" width="7" height="7"/>
+                            <rect x="14" y="3" width="7" height="7"/>
+                            <rect x="14" y="14" width="7" height="7"/>
+                            <rect x="3" y="14" width="7" height="7"/>
+                        </svg>
+                    </div>
+                    <h3>Too Many Vendors</h3>
+                    <p>Coordinating ground transport, catering, and hotels separately.</p>
+                    <p class="solution">Our fix: Everything handled in one call</p>
                 </div>
             </div>
         </div>
@@ -945,37 +1001,37 @@
                     <div class="value-number">11,000+</div>
                     <div class="value-label">Aircraft Worldwide</div>
                     <h3>Global Fleet Access</h3>
-                    <p>From light jets to ultra-long range. Every aircraft type, every destination, always available.</p>
+                    <p>Light jets to heavy long-range aircraft. Every type you need, wherever you're going.</p>
                 </div>
                 <div class="value-card">
                     <div class="value-number">24/7</div>
                     <div class="value-label">Human Support</div>
                     <h3>Real People, Real Answers</h3>
-                    <p>Your dedicated advisor answers immediately. No bots, no hold times, no frustration.</p>
+                    <p>Your advisor picks up right away. No automated menus, no waiting on hold.</p>
                 </div>
                 <div class="value-card">
                     <div class="value-number">1</div>
                     <div class="value-label">Point of Contact</div>
                     <h3>Your Personal Advisor</h3>
-                    <p>One person who knows your preferences, your schedule, and your standards.</p>
+                    <p>One person who learns your preferences and handles every detail.</p>
                 </div>
                 <div class="value-card">
                     <div class="value-number">0</div>
                     <div class="value-label">Hidden Fees</div>
-                    <h3>Transparent Pricing</h3>
-                    <p>The price we quote is the price you pay. No surprises, no add-ons, no games.</p>
+                    <h3>Honest Pricing</h3>
+                    <p>What we quote is what you pay. No surprises when the bill arrives.</p>
                 </div>
                 <div class="value-card">
                     <div class="value-number">Direct</div>
                     <div class="value-label">Owner Network</div>
                     <h3>Better Rates</h3>
-                    <p>We work directly with jet owners, cutting out middlemen for competitive pricing.</p>
+                    <p>We work straight with aircraft owners. No middlemen means better pricing for you.</p>
                 </div>
                 <div class="value-card">
                     <div class="value-number">All-In</div>
                     <div class="value-label">Luxury Solution</div>
                     <h3>Jets, Yachts, Villas</h3>
-                    <p>Your complete luxury travel experience. Private aviation is just the beginning.</p>
+                    <p>Your complete travel experience. The private jet is just the start.</p>
                 </div>
             </div>
         </div>
@@ -991,18 +1047,18 @@
             <div class="process-steps">
                 <div class="process-step">
                     <div class="step-number">1</div>
-                    <h3>Tell Us Your Trip</h3>
-                    <p>Share your dates, destinations, and preferences</p>
+                    <h3>Share Your Trip Details</h3>
+                    <p>Tell us your dates, where you're headed, and what you need</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">2</div>
-                    <h3>Get Your Options</h3>
-                    <p>Receive curated aircraft options with transparent pricing</p>
+                    <h3>Review Your Options</h3>
+                    <p>Get aircraft choices with clear pricing, usually within minutes</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">3</div>
                     <h3>Fly Private</h3>
-                    <p>We handle every detail. You just show up and fly.</p>
+                    <p>We take care of everything. Just show up and go.</p>
                 </div>
             </div>
         </div>
@@ -1012,7 +1068,13 @@
     <section class="testimonial-section">
         <div class="testimonial-container">
             <span class="section-label">Section 6: Social Proof</span>
-            <p class="testimonial-quote">The difference is night and day. My advisor picked up immediately, had options within minutes, and the price she quoted was exactly what I paid. No surprises. This is how private aviation should work.</p>
+            <div class="quote-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V21z"/>
+                    <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/>
+                </svg>
+            </div>
+            <p class="testimonial-quote">Night and day difference. My advisor answered immediately, sent options within minutes, and the price she quoted was exactly what I paid. No surprises at all. This is how charter should work.</p>
             <p class="testimonial-author">Executive Client</p>
             <p class="testimonial-role">Houston, TX</p>
         </div>
