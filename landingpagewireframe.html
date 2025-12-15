@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciel Jets Landing Page Wireframe - UHNW Conversion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        
+        /* Wireframe Annotation Styles */
+        .wireframe-note {
+            background: #ffd700;
+            color: #000;
+            padding: 8px 12px;
+            font-size: 11px;
+            font-weight: 600;
+            position: absolute;
+            border-radius: 4px;
+            z-index: 100;
+            max-width: 200px;
+        }
+        
+        .wireframe-note::before {
+            content: "📌 ";
+        }
+        
+        .section-label {
+            background: #e94560;
+            color: white;
+            padding: 6px 16px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 20px;
+            border-radius: 2px;
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 20px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(180deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+        }
+        
+        .logo {
+            height: 40px;
+        }
+        
+        .header-cta {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .phone-number {
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 500;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .phone-number::before {
+            content: "📞";
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #c9a962 0%, #a68b4b 100%);
+            color: #0a0a0a;
+            padding: 14px 32px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(201, 169, 98, 0.3);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #0d1117 0%, #1a1a2e 50%, #0d1117 100%);
+        }
+        
+        .hero-bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="40" fill="rgba(255,255,255,0.03)">✈</text></svg>');
+            background-size: 200px;
+            opacity: 0.5;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 900px;
+            padding: 0 40px;
+        }
+        
+        .hero-tagline {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #c9a962;
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+        
+        .hero-headline {
+            font-size: 64px;
+            font-weight: 300;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+        
+        .hero-headline strong {
+            font-weight: 600;
+        }
+        
+        .hero-subheadline {
+            font-size: 20px;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 48px;
+            font-weight: 300;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-cta-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #ffffff;
+            padding: 14px 32px;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 2px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            border-color: #c9a962;
+            color: #c9a962;
+        }
+        
+        .hero-trust {
+            margin-top: 60px;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: rgba(255,255,255,0.5);
+            font-size: 13px;
+        }
+        
+        .trust-item svg {
+            width: 20px;
+            height: 20px;
+            fill: #c9a962;
+        }
+        
+        /* Quote Form Section */
+        .quote-section {
+            padding: 100px 60px;
+            background: #0d1117;
+            position: relative;
+        }
+        
+        .quote-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        
+        .quote-content h2 {
+            font-size: 42px;
+            font-weight: 300;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+        
+        .quote-content h2 strong {
+            color: #c9a962;
+            font-weight: 600;
+        }
+        
+        .quote-content p {
+            color: rgba(255,255,255,0.7);
+            font-size: 18px;
+            margin-bottom: 32px;
+            line-height: 1.8;
+        }
+        
+        .quote-benefits {
+            list-style: none;
+        }
+        
+        .quote-benefits li {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            font-size: 16px;
+        }
+        
+        .quote-benefits li::before {
+            content: "✓";
+            color: #c9a962;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .quote-form-container {
+            background: linear-gradient(135deg, #161b22 0%, #1a1a2e 100%);
+            padding: 48px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .form-title {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        
+        .form-subtitle {
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+            margin-bottom: 32px;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        
+        .form-group {
+            margin-bottom: 16px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 16px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 4px;
+            color: #ffffff;
+            font-size: 16px;
+            font-family: inherit;
+        }
+        
+        .form-group input::placeholder {
+            color: rgba(255,255,255,0.4);
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #c9a962;
+        }
+        
+        .form-submit {
+            width: 100%;
+            padding: 18px;
+            margin-top: 16px;
+        }
+        
+        .form-privacy {
+            text-align: center;
+            margin-top: 16px;
+            font-size: 12px;
+            color: rgba(255,255,255,0.5);
+        }
+        
+        /* Pain Points Section */
+        .pain-section {
+            padding: 100px 60px;
+            background: #0a0a0a;
+        }
+        
+        .pain-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .pain-header {
+            margin-bottom: 60px;
+        }
+        
+        .pain-header h2 {
+            font-size: 42px;
+            font-weight: 300;
+            margin-bottom: 16px;
+        }
+        
+        .pain-header p {
+            color: rgba(255,255,255,0.6);
+            font-size: 18px;
+        }
+        
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+        }
+        
+        .pain-card {
+            background: linear-gradient(135deg, #161b22 0%, #0d1117 100%);
+            padding: 40px 32px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+        
+        .pain-card:hover {
+            transform: translateY(-8px);
+            border-color: #c9a962;
+        }
+        
+        .pain-icon {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        .pain-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #e94560;
+        }
+        
+        .pain-card .solution {
+            font-size: 16px;
+            font-weight: 500;
+            color: #c9a962;
+            margin-top: 16px;
+        }
+        
+        .pain-card p {
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+        
+        /* Value Props Section */
+        .value-section {
+            padding: 100px 60px;
+            background: linear-gradient(180deg, #0d1117 0%, #1a1a2e 100%);
+        }
+        
+        .value-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .value-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .value-header h2 {
+            font-size: 42px;
+            font-weight: 300;
+            margin-bottom: 16px;
+        }
+        
+        .value-header h2 strong {
+            font-weight: 600;
+            color: #c9a962;
+        }
+        
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+        
+        .value-card {
+            background: rgba(255,255,255,0.03);
+            padding: 48px 32px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .value-card:hover {
+            background: rgba(255,255,255,0.06);
+            border-color: rgba(201, 169, 98, 0.3);
+        }
+        
+        .value-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: #c9a962;
+            margin-bottom: 8px;
+        }
+        
+        .value-label {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 20px;
+        }
+        
+        .value-card h3 {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+        
+        .value-card p {
+            color: rgba(255,255,255,0.6);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        
+        /* How It Works */
+        .process-section {
+            padding: 100px 60px;
+            background: #0a0a0a;
+        }
+        
+        .process-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .process-header h2 {
+            font-size: 42px;
+            font-weight: 300;
+            margin-bottom: 60px;
+        }
+        
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+        
+        .process-steps::before {
+            content: "";
+            position: absolute;
+            top: 40px;
+            left: 100px;
+            right: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, #c9a962 0%, rgba(201,169,98,0.2) 100%);
+        }
+        
+        .process-step {
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #c9a962 0%, #a68b4b 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 700;
+            color: #0a0a0a;
+            margin: 0 auto 24px;
+        }
+        
+        .process-step h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .process-step p {
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+            max-width: 180px;
+            margin: 0 auto;
+        }
+        
+        /* Testimonial */
+        .testimonial-section {
+            padding: 100px 60px;
+            background: linear-gradient(135deg, #161b22 0%, #0d1117 100%);
+        }
+        
+        .testimonial-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .testimonial-quote {
+            font-size: 28px;
+            font-weight: 300;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 32px;
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .testimonial-quote::before {
+            content: '"';
+            font-size: 60px;
+            color: #c9a962;
+            display: block;
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+        
+        .testimonial-author {
+            font-size: 16px;
+            font-weight: 500;
+        }
+        
+        .testimonial-role {
+            color: rgba(255,255,255,0.5);
+            font-size: 14px;
+            margin-top: 4px;
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            padding: 100px 60px;
+            background: linear-gradient(135deg, #c9a962 0%, #a68b4b 100%);
+            text-align: center;
+        }
+        
+        .final-cta h2 {
+            font-size: 48px;
+            font-weight: 300;
+            color: #0a0a0a;
+            margin-bottom: 16px;
+        }
+        
+        .final-cta p {
+            font-size: 20px;
+            color: rgba(0,0,0,0.7);
+            margin-bottom: 40px;
+        }
+        
+        .final-cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-dark {
+            background: #0a0a0a;
+            color: #ffffff;
+            padding: 18px 40px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-dark:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .btn-outline-dark {
+            background: transparent;
+            color: #0a0a0a;
+            padding: 18px 40px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid #0a0a0a;
+            border-radius: 2px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 60px;
+            background: #0a0a0a;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .footer-contact {
+            display: flex;
+            gap: 40px;
+        }
+        
+        .footer-contact a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .footer-badges {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        
+        .badge {
+            background: rgba(255,255,255,0.1);
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Wireframe Overlay */
+        .wireframe-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #1a1a2e;
+            padding: 16px 60px;
+            z-index: 2000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #c9a962;
+        }
+        
+        .wireframe-title {
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .wireframe-title span {
+            color: #c9a962;
+        }
+        
+        .wireframe-meta {
+            font-size: 12px;
+            color: rgba(255,255,255,0.6);
+        }
+        
+        body {
+            padding-top: 60px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .quote-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .pain-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .value-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-headline {
+                font-size: 40px;
+            }
+            
+            .pain-grid,
+            .value-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .process-steps {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .process-steps::before {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Wireframe Header -->
+    <div class="wireframe-overlay">
+        <div class="wireframe-title">CIEL JETS <span>Landing Page Wireframe</span> - UHNW Conversion Optimized</div>
+        <div class="wireframe-meta">Version 1.0 | December 2024 | Desktop + Mobile Responsive</div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='40'><text y='28' font-size='24' font-weight='bold' fill='white' font-family='Arial'>CIEL JETS</text><text y='38' font-size='8' fill='white' font-family='Arial' letter-spacing='3'>LUXURY AVIATION</text></svg>" alt="Ciel Jets" class="logo">
+        <div class="header-cta">
+            <a href="tel:+15618957000" class="phone-number">+1 (561) 895-7000</a>
+            <a href="#quote" class="btn-primary">Get Your Quote</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <span class="section-label">Section 1: Hero</span>
+            <p class="hero-tagline">Private Aviation, Perfected</p>
+            <h1 class="hero-headline">Your Sky.<br><strong>Your Schedule.</strong></h1>
+            <p class="hero-subheadline">One call to your dedicated advisor. Immediate response. Transparent pricing. 11,000+ aircraft at your command.</p>
+            <div class="hero-cta-group">
+                <a href="#quote" class="btn-primary">Request Your Quote</a>
+                <a href="tel:+15618957000" class="btn-secondary">Call Now: 561-895-7000</a>
+            </div>
+            <div class="hero-trust">
+                <div class="trust-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    24/7 Human Support
+                </div>
+                <div class="trust-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    No Hidden Fees
+                </div>
+                <div class="trust-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    Direct Owner Network
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Form Section -->
+    <section class="quote-section" id="quote">
+        <div class="quote-container">
+            <div class="quote-content">
+                <span class="section-label">Section 2: Quote Form + Value Props</span>
+                <h2>Get Your <strong>Personalized Quote</strong> in Minutes</h2>
+                <p>Tell us where you need to go. Your dedicated flight advisor will respond immediately with transparent pricing and aircraft options tailored to your journey.</p>
+                <ul class="quote-benefits">
+                    <li>Speak with a real person, not a chatbot</li>
+                    <li>Transparent, all-inclusive pricing upfront</li>
+                    <li>Access to 11,000+ verified aircraft worldwide</li>
+                    <li>Direct relationships with jet owners for better rates</li>
+                    <li>White glove concierge from booking to landing</li>
+                </ul>
+            </div>
+            <div class="quote-form-container">
+                <h3 class="form-title">Request Your Quote</h3>
+                <p class="form-subtitle">Response guaranteed within 15 minutes</p>
+                <form>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" placeholder="John">
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" placeholder="Smith">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" placeholder="+1 (555) 000-0000">
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" placeholder="john@company.com">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Departing From</label>
+                            <input type="text" placeholder="City or Airport">
+                        </div>
+                        <div class="form-group">
+                            <label>Destination</label>
+                            <input type="text" placeholder="City or Airport">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Departure Date</label>
+                            <input type="date">
+                        </div>
+                        <div class="form-group">
+                            <label>Passengers</label>
+                            <select>
+                                <option>1-4 passengers</option>
+                                <option>5-8 passengers</option>
+                                <option>9-14 passengers</option>
+                                <option>15+ passengers</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-primary form-submit">Get My Quote Now</button>
+                    <p class="form-privacy">Your information is secure and will never be shared.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pain Points Section -->
+    <section class="pain-section">
+        <div class="pain-container">
+            <span class="section-label">Section 3: Pain Points + Solutions</span>
+            <div class="pain-header">
+                <h2>Tired of These Charter Frustrations?</h2>
+                <p>We built Ciel Jets to solve every pain point in private aviation.</p>
+            </div>
+            <div class="pain-grid">
+                <div class="pain-card">
+                    <div class="pain-icon">⏰</div>
+                    <h3>Slow Response Times</h3>
+                    <p>Waiting hours or days for quotes while your schedule changes.</p>
+                    <p class="solution">Our Solution: Immediate human response, 24/7</p>
+                </div>
+                <div class="pain-card">
+                    <div class="pain-icon">👤</div>
+                    <h3>No Personalization</h3>
+                    <p>Treated like a transaction, not a valued client.</p>
+                    <p class="solution">Our Solution: Dedicated advisor who knows you</p>
+                </div>
+                <div class="pain-card">
+                    <div class="pain-icon">💰</div>
+                    <h3>Hidden Fees</h3>
+                    <p>Surprise charges that inflate the final bill.</p>
+                    <p class="solution">Our Solution: Transparent, all-in pricing</p>
+                </div>
+                <div class="pain-card">
+                    <div class="pain-icon">🔗</div>
+                    <h3>Fragmented Service</h3>
+                    <p>Juggling multiple providers for ground transport, catering, hotels.</p>
+                    <p class="solution">Our Solution: Complete luxury travel in one call</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Props Section -->
+    <section class="value-section">
+        <div class="value-container">
+            <span class="section-label">Section 4: Unique Value Proposition</span>
+            <div class="value-header">
+                <h2>The <strong>Ciel Jets</strong> Difference</h2>
+            </div>
+            <div class="value-grid">
+                <div class="value-card">
+                    <div class="value-number">11,000+</div>
+                    <div class="value-label">Aircraft Worldwide</div>
+                    <h3>Global Fleet Access</h3>
+                    <p>From light jets to ultra-long range. Every aircraft type, every destination, always available.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-number">24/7</div>
+                    <div class="value-label">Human Support</div>
+                    <h3>Real People, Real Answers</h3>
+                    <p>Your dedicated advisor answers immediately. No bots, no hold times, no frustration.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-number">1</div>
+                    <div class="value-label">Point of Contact</div>
+                    <h3>Your Personal Advisor</h3>
+                    <p>One person who knows your preferences, your schedule, and your standards.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-number">0</div>
+                    <div class="value-label">Hidden Fees</div>
+                    <h3>Transparent Pricing</h3>
+                    <p>The price we quote is the price you pay. No surprises, no add-ons, no games.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-number">Direct</div>
+                    <div class="value-label">Owner Network</div>
+                    <h3>Better Rates</h3>
+                    <p>We work directly with jet owners, cutting out middlemen for competitive pricing.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-number">All-In</div>
+                    <div class="value-label">Luxury Solution</div>
+                    <h3>Jets, Yachts, Villas</h3>
+                    <p>Your complete luxury travel experience. Private aviation is just the beginning.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="process-section">
+        <div class="process-container">
+            <span class="section-label">Section 5: How It Works</span>
+            <div class="process-header">
+                <h2>Book Your Flight in 3 Simple Steps</h2>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Tell Us Your Trip</h3>
+                    <p>Share your dates, destinations, and preferences</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Get Your Options</h3>
+                    <p>Receive curated aircraft options with transparent pricing</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Fly Private</h3>
+                    <p>We handle every detail. You just show up and fly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="testimonial-section">
+        <div class="testimonial-container">
+            <span class="section-label">Section 6: Social Proof</span>
+            <p class="testimonial-quote">The difference is night and day. My advisor picked up immediately, had options within minutes, and the price she quoted was exactly what I paid. No surprises. This is how private aviation should work.</p>
+            <p class="testimonial-author">Executive Client</p>
+            <p class="testimonial-role">Houston, TX</p>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <span class="section-label" style="background: #0a0a0a; color: #fff;">Section 7: Final CTA</span>
+        <h2>Ready to Fly Different?</h2>
+        <p>Your dedicated advisor is standing by. Get your personalized quote now.</p>
+        <div class="final-cta-buttons">
+            <a href="#quote" class="btn-dark">Request Your Quote</a>
+            <a href="tel:+15618957000" class="btn-outline-dark">Call: +1 (561) 895-7000</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-contact">
+                <a href="tel:+15618957000">+1 (561) 895-7000</a>
+                <a href="mailto:info@cieljets.com">info@cieljets.com</a>
+                <a href="#">Palm Beach, FL</a>
+            </div>
+            <div class="footer-badges">
+                <span class="badge">NBAA Member</span>
+                <span class="badge">Wyvern Certified</span>
+                <span class="badge">EBAA Member</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
