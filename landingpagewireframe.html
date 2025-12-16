@@ -47,7 +47,36 @@
         }
         
         .logo {
-            height: 40px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-name {
+            font-size: 22px;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 3px;
+            line-height: 1;
+        }
+        
+        .logo-tagline {
+            font-size: 8px;
+            color: #c9a962;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-top: 3px;
         }
         
         .header-cta {
@@ -691,6 +720,32 @@
             align-items: center;
         }
         
+        .footer-left {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        
+        .footer-logo .logo-name {
+            font-size: 18px;
+        }
+        
+        .footer-logo .logo-tagline {
+            font-size: 7px;
+        }
+        
+        .footer-logo .logo-icon {
+            width: 28px;
+            height: 28px;
+        }
+        
         .footer-contact {
             display: flex;
             gap: 40px;
@@ -790,11 +845,21 @@
     <!-- Wireframe Header -->
     <div class="wireframe-overlay">
         <div class="wireframe-title">CIEL JETS <span>Landing Page Wireframe</span></div>
+        <div class="wireframe-meta">Version 1.0 | December 2024 | Desktop + Mobile Responsive</div>
     </div>
 
     <!-- Header -->
     <header>
-        <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='40'><text y='28' font-size='24' font-weight='bold' fill='white' font-family='Arial'>CIEL JETS</text><text y='38' font-size='8' fill='white' font-family='Arial' letter-spacing='3'>LUXURY AVIATION</text></svg>" alt="Ciel Jets" class="logo">
+        <a href="#" class="logo">
+            <svg class="logo-icon" viewBox="0 0 40 40" fill="none">
+                <circle cx="20" cy="20" r="18" stroke="#c9a962" stroke-width="2"/>
+                <path d="M12 20h16M20 12l8 8-8 8" stroke="#c9a962" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div class="logo-text">
+                <span class="logo-name">CIEL JETS</span>
+                <span class="logo-tagline">Luxury Aviation</span>
+            </div>
+        </a>
         <div class="header-cta">
             <a href="tel:+15618957000" class="phone-number">
                 <svg viewBox="0 0 24 24">
@@ -1001,7 +1066,7 @@
                     <div class="value-number">11,000+</div>
                     <div class="value-label">Aircraft Worldwide</div>
                     <h3>Global Fleet Access</h3>
-                    <p>Light jets to heavy long-range aircraft. Every type you need, wherever you're going.</p>
+                    <p>Light jets to heavy long-range aircraft. Every type you need, wherever you are going.</p>
                 </div>
                 <div class="value-card">
                     <div class="value-number">24/7</div>
@@ -1048,7 +1113,7 @@
                 <div class="process-step">
                     <div class="step-number">1</div>
                     <h3>Share Your Trip Details</h3>
-                    <p>Tell us your dates, where you're headed, and what you need</p>
+                    <p>Tell us your dates, where you are headed, and what you need</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">2</div>
@@ -1094,10 +1159,22 @@
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <div class="footer-contact">
-                <a href="tel:+15618957000">+1 (561) 895-7000</a>
-                <a href="mailto:info@cieljets.com">info@cieljets.com</a>
-                <a href="#">Palm Beach, FL</a>
+            <div class="footer-left">
+                <a href="#" class="footer-logo">
+                    <svg class="logo-icon" viewBox="0 0 40 40" fill="none">
+                        <circle cx="20" cy="20" r="18" stroke="#c9a962" stroke-width="2"/>
+                        <path d="M12 20h16M20 12l8 8-8 8" stroke="#c9a962" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <div class="logo-text">
+                        <span class="logo-name">CIEL JETS</span>
+                        <span class="logo-tagline">Luxury Aviation</span>
+                    </div>
+                </a>
+                <div class="footer-contact">
+                    <a href="tel:+15618957000">+1 (561) 895-7000</a>
+                    <a href="mailto:info@cieljets.com">info@cieljets.com</a>
+                    <a href="#">Palm Beach, FL</a>
+                </div>
             </div>
             <div class="footer-badges">
                 <span class="badge">NBAA Member</span>
