@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciel Jets Landing Page Wireframe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+            padding-top: 140px;
+        }
+        
+        .section-label {
+            background: #e94560;
+            color: white;
+            padding: 6px 16px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 20px;
+            border-radius: 2px;
+        }
+        
+        /* Wireframe Overlay */
+        .wireframe-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #1a1a1a;
+            padding: 15px 60px;
+            z-index: 2000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #333;
+        }
+        
+        .wireframe-title {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .wireframe-title span {
+            color: #c9a962;
+        }
+        
+        .wireframe-meta {
+            font-size: 12px;
+            color: rgba(255,255,255,0.6);
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 60px;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 20px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(180deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        
+        .logo-img {
+            height: 45px;
+            width: auto;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 2px;
+        }
+        
+        .logo-tagline {
+            font-size: 9px;
+            color: #c9a962;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        
+        .header-cta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .phone-icon-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            min-height: 48px;
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+        
+        .phone-icon-btn:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: #c9a962;
+        }
+        
+        .phone-icon-btn svg {
+            width: 22px;
+            height: 22px;
+            min-width: 22px;
+            min-height: 22px;
+            fill: none;
+            stroke: #c9a962;
+            stroke-width: 2;
+        }
+        
+        .btn-primary {
+            background: #c9a962;
+            color: #0a0a0a;
+            padding: 14px 32px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: #d4b872;
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 60px;
+            overflow: hidden;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
+        }
+        
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="%23c9a96220"/></svg>') repeat;
+            background-size: 50px 50px;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            text-align: center;
+        }
+        
+        .hero-tagline {
+            color: #c9a962;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            margin-bottom: 30px;
+        }
+        
+        .hero-headline {
+            font-size: 80px;
+            font-weight: 300;
+            line-height: 1.1;
+            margin-bottom: 30px;
+        }
+        
+        .hero-headline strong {
+            font-weight: 700;
+        }
+        
+        .hero-subheadline {
+            font-size: 22px;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 50px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        
+        .hero-ctas {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+        
+        .hero-ctas .btn-primary {
+            padding: 18px 40px;
+            font-size: 15px;
+            letter-spacing: 1px;
+        }
+        
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,0.3);
+            background: rgba(0,0,0,0.3);
+            color: #fff;
+            padding: 18px 40px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline:hover {
+            border-color: #c9a962;
+            color: #c9a962;
+        }
+        
+        /* Hero Trust Badges */
+        .hero-trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 20px;
+        }
+        
+        .hero-trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+        }
+        
+        .hero-trust-badge svg {
+            width: 20px;
+            height: 20px;
+            stroke: #c9a962;
+            fill: none;
+            stroke-width: 2;
+        }
+        
+        /* Quote Section */
+        .quote-section {
+            padding: 100px 60px;
+            background: #111;
+        }
+        
+        .quote-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        
+        .quote-content h2 {
+            font-size: 42px;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+        
+        .quote-content h2 strong {
+            font-weight: 700;
+            color: #c9a962;
+        }
+        
+        .quote-content p {
+            color: rgba(255,255,255,0.7);
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        
+        .quote-features {
+            list-style: none;
+        }
+        
+        .quote-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .quote-features svg {
+            width: 20px;
+            height: 20px;
+            fill: none;
+            stroke: #c9a962;
+            stroke-width: 2;
+            flex-shrink: 0;
+        }
+        
+        /* Quote Form */
+        .quote-form {
+            background: #1a1a1a;
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid #333;
+        }
+        
+        .quote-form h3 {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        
+        .quote-form .form-subtitle {
+            color: rgba(255,255,255,0.5);
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+        
+        .form-group label {
+            font-size: 12px;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            background: #0a0a0a;
+            border: 1px solid #333;
+            border-radius: 4px;
+            padding: 14px 16px;
+            color: #fff;
+            font-size: 15px;
+            font-family: inherit;
+            width: 100%;
+            min-width: 0;
+            box-sizing: border-box;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #c9a962;
+        }
+        
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255,255,255,0.3);
+        }
+        
+        .form-group select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23c9a962' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            padding-right: 40px;
+        }
+        
+        .form-submit {
+            width: 100%;
+            background: #c9a962;
+            color: #0a0a0a;
+            border: none;
+            padding: 16px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-submit:hover {
+            background: #d4b872;
+        }
+        
+        .form-note {
+            text-align: center;
+            font-size: 12px;
+            color: rgba(255,255,255,0.4);
+            margin-top: 16px;
+        }
+        
+        /* Pain Points Section */
+        .pain-section {
+            padding: 100px 60px;
+            background: #0a0a0a;
+        }
+        
+        .pain-section .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+        
+        .pain-section h2 {
+            font-size: 42px;
+            font-weight: 300;
+            margin-bottom: 16px;
+        }
+        
+        .pain-section h2 strong {
+            font-weight: 700;
+        }
+        
+        .pain-section .section-header p {
+            color: rgba(255,255,255,0.6);
+            font-size: 18px;
+        }
+        
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: stretch;
+        }
+        
+        .pain-card {
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 8px;
+            padding: 32px 24px;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        .pain-card:hover {
+            border-color: #c9a962;
+            transform: translateY(-4px);
+        }
+        
+        .pain-card .icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(201, 169, 98, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+        
+        .pain-card .icon svg {
+            width: 32px;
+            height: 32px;
+            fill: none;
+            stroke: #c9a962;
+            stroke-width: 1.5;
+        }
+        
+        .pain-card h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #e94560;
+            text-align: left;
+            width: 100%;
+        }
+        
+        .pain-card .pain-text {
+            font-size: 14px;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 24px;
+            line-height: 1.6;
+            text-align: left;
+            width: 100%;
+            flex-grow: 1;
+        }
+        
+        .pain-card .fix-label {
+            font-size: 11px;
+            color: #c9a962;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        
+        .pain-card .fix-text {
+            font-size: 14px;
+            color: #c9a962;
+            line-height: 1.6;
+            text-align: left;
+            width: 100%;
+            margin-top: auto;
+        }
+        
+        .pain-card .fix-text .fix-label-inline {
+            color: #c9a962;
+            font-weight: 700;
+        }
+        
+        .pain-card .fix-text .highlight {
+            color: #ffffff;
+            font-weight: 600;
+        }
+        
+        /* Unique Value Proposition Section */
+        .uvp-section {
+            padding: 100px 60px;
+            background: #0a0a0a;
+        }
+        
+        .uvp-section .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+        
+        .uvp-section h2 {
+            font-size: 48px;
+            font-weight: 300;
+            margin-bottom: 16px;
+        }
+        
+        .uvp-section h2 strong {
+            font-weight: 700;
+            color: #c9a962;
+        }
+        
+        .uvp-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .uvp-card {
+            background: linear-gradient(180deg, #141a2e 0%, #0f1420 100%);
+            border: 1px solid #1e2a45;
+            border-top: 3px solid #3a5a8a;
+            border-radius: 12px;
+            padding: 48px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .uvp-card:hover {
+            border-color: #4a6a9a;
+            border-top-color: #c9a962;
+            transform: translateY(-4px);
+        }
+        
+        .uvp-card .uvp-number {
+            font-size: 56px;
+            font-weight: 300;
+            color: #c9a962;
+            line-height: 1;
+            margin-bottom: 8px;
+            font-style: normal;
+        }
+        
+        .uvp-card .uvp-label {
+            font-size: 11px;
+            color: rgba(255,255,255,0.45);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 24px;
+        }
+        
+        .uvp-card .uvp-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+        
+        .uvp-card .uvp-description {
+            font-size: 14px;
+            color: rgba(255,255,255,0.55);
+            line-height: 1.6;
+        }
+        
+        /* Value Props Section */
+        .value-section {
+            padding: 100px 60px;
+            background: #111;
+        }
+        
+        .value-section .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+        
+        .value-section h2 {
+            font-size: 42px;
+            font-weight: 300;
+            margin-bottom: 16px;
+        }
+        
+        .value-section h2 strong {
+            font-weight: 700;
+            color: #c9a962;
+        }
+        
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .value-card {
+            background: #1a1a1a;
+            border: 1px solid #222;
+            border-radius: 8px;
+            padding: 32px 24px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .value-card:hover {
+            border-color: #c9a962;
+        }
+        
+        .value-card .icon {
+            width: 72px;
+            height: 72px;
+            background: rgba(201, 169, 98, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        
+        .value-card .icon svg {
+            width: 32px;
+            height: 32px;
+            fill: none;
+            stroke: #c9a962;
+            stroke-width: 1.5;
+        }
+        
+        .value-card h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .value-card p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.6;
+        }
+        
+        /* How It Works Section */
+        .process-section {
+            padding: 100px 60px;
+            background: #0a0a0a;
+        }
+        
+        .process-section .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .process-section h2 {
+            font-size: 42px;
+            font-weight: 300;
+        }
+        
+        .process-section h2 strong {
+            font-weight: 700;
+            color: #c9a962;
+        }
+        
+        .process-steps {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 20%;
+            right: 20%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #333, #333, transparent);
+        }
+        
+        .process-step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            flex: 1;
+            max-width: 250px;
+        }
+        
+        .process-step .step-number {
+            width: 80px;
+            height: 80px;
+            background: #111;
+            border: 2px solid #c9a962;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 28px;
+            font-weight: 700;
+            color: #c9a962;
+        }
+        
+        .process-step h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .process-step p {
+            font-size: 14px;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        
+        /* Testimonial Section */
+        .testimonial-section {
+            padding: 100px 60px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #0a0a0a 100%);
+            text-align: center;
+        }
+        
+        .testimonial-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-quote {
+            font-size: 28px;
+            font-weight: 300;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 32px;
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .testimonial-author {
+            font-size: 18px;
+            font-weight: 600;
+            color: #c9a962;
+            margin-bottom: 4px;
+        }
+        
+        .testimonial-role {
+            font-size: 14px;
+            color: rgba(255,255,255,0.5);
+        }
+        
+        /* Final CTA Section */
+        .final-cta {
+            padding: 100px 60px;
+            background: #c9a962;
+            text-align: center;
+        }
+        
+        .final-cta h2 {
+            font-size: 48px;
+            font-weight: 300;
+            color: #0a0a0a;
+            margin-bottom: 16px;
+        }
+        
+        .final-cta p {
+            font-size: 20px;
+            color: rgba(10,10,10,0.7);
+            margin-bottom: 40px;
+        }
+        
+        .final-cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+        
+        .btn-dark {
+            background: #0a0a0a;
+            color: #fff;
+            padding: 16px 40px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-dark:hover {
+            background: #1a1a1a;
+        }
+        
+        .btn-outline-dark {
+            border: 2px solid #0a0a0a;
+            color: #0a0a0a;
+            padding: 14px 40px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-dark:hover {
+            background: #0a0a0a;
+            color: #fff;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 60px;
+            background: #0a0a0a;
+            border-top: 1px solid #222;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        
+        .footer-left {
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        
+        .footer-logo-img {
+            height: 40px;
+            width: auto;
+        }
+        
+        .footer-logo .logo-icon {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .footer-logo .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .footer-logo .logo-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 2px;
+        }
+        
+        .footer-logo .logo-tagline {
+            font-size: 8px;
+            color: #c9a962;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .footer-contact a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-contact a:hover {
+            color: #c9a962;
+        }
+        
+        /* Footer Accreditations - Vertically Stacked */
+        .footer-accreditations {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: flex-end;
+        }
+        
+        .footer-accreditations .accreditation-img {
+            height: 40px;
+            width: auto;
+            object-fit: contain;
+            background: rgba(255,255,255,0.9);
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+        
+        .footer-accreditations .badge {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            padding: 10px 20px;
+            font-size: 12px;
+            color: rgba(255,255,255,0.7);
+            border-radius: 4px;
+            text-align: center;
+            min-width: 140px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .quote-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .pain-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .uvp-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .value-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .footer-left {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .footer-accreditations {
+                align-items: flex-start;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding-top: 120px;
+            }
+            
+            .wireframe-overlay {
+                padding: 12px 20px;
+                flex-direction: column;
+                gap: 4px;
+                text-align: center;
+            }
+            
+            header {
+                padding: 15px 20px;
+                top: 50px;
+            }
+            
+            .logo-text {
+                display: none;
+            }
+            
+            .logo-icon {
+                width: 36px;
+                height: 36px;
+            }
+            
+            .header-cta {
+                gap: 12px;
+            }
+            
+            /* Phone icon button - Mobile responsive fix */
+            .phone-icon-btn {
+                width: 44px;
+                height: 44px;
+                min-width: 44px;
+                min-height: 44px;
+                padding: 0;
+                aspect-ratio: 1 / 1;
+            }
+            
+            .phone-icon-btn svg {
+                width: 20px;
+                height: 20px;
+                min-width: 20px;
+                min-height: 20px;
+            }
+            
+            .btn-primary {
+                padding: 12px 20px;
+                font-size: 13px;
+            }
+            
+            .hero {
+                padding: 40px 20px;
+                min-height: 100vh;
+            }
+            
+            .hero-content {
+                text-align: left;
+            }
+            
+            .hero-headline {
+                font-size: 48px;
+            }
+            
+            .hero-subheadline {
+                font-size: 17px;
+                margin-left: 0;
+                margin-right: 0;
+            }
+            
+            .hero-ctas {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .hero-ctas .btn-primary,
+            .hero-ctas .btn-outline {
+                width: 100%;
+                max-width: 100%;
+                text-align: center;
+            }
+            
+            .hero-trust-badges {
+                flex-direction: column;
+                gap: 16px;
+                align-items: flex-start;
+            }
+            
+            .quote-section {
+                padding: 60px 20px;
+            }
+            
+            .quote-content {
+                text-align: left;
+            }
+            
+            .quote-form {
+                padding: 24px 20px;
+            }
+            
+            /* Form fields - Mobile responsive fix */
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+            
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 14px 14px;
+                font-size: 16px;
+                width: 100%;
+                max-width: 100%;
+                min-height: 48px;
+            }
+            
+            .form-group select {
+                background-position: right 14px center;
+                padding-right: 36px;
+            }
+            
+            .form-submit {
+                padding: 16px;
+                font-size: 16px;
+                min-height: 52px;
+            }
+            
+            .pain-section,
+            .uvp-section,
+            .value-section,
+            .process-section {
+                padding: 60px 20px;
+            }
+            
+            .pain-grid,
+            .uvp-grid,
+            .value-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .uvp-card .uvp-number {
+                font-size: 42px;
+            }
+            
+            /* Mobile left-align for better UX */
+            .uvp-card {
+                text-align: left;
+                padding: 32px 24px;
+            }
+            
+            .uvp-card .uvp-number,
+            .uvp-card .uvp-label,
+            .uvp-card .uvp-title,
+            .uvp-card .uvp-description {
+                text-align: left;
+            }
+            
+            .value-card {
+                text-align: left;
+                padding: 28px 24px;
+            }
+            
+            .value-card .icon {
+                margin: 0 0 16px 0;
+            }
+            
+            .value-card h4,
+            .value-card p {
+                text-align: left;
+            }
+            
+            .section-header {
+                text-align: left;
+            }
+            
+            .pain-section .section-header,
+            .uvp-section .section-header,
+            .value-section .section-header,
+            .process-section .section-header {
+                text-align: left;
+            }
+            
+            .process-steps {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .process-steps::before {
+                display: none;
+            }
+            
+            .process-step {
+                text-align: left;
+            }
+            
+            .process-step .step-number {
+                margin: 0 0 20px 0;
+            }
+            
+            .testimonial-section {
+                padding: 60px 20px;
+            }
+            
+            .testimonial-content {
+                text-align: left;
+            }
+            
+            .testimonial-quote {
+                font-size: 20px;
+                text-align: left;
+            }
+            
+            .final-cta {
+                padding: 60px 20px;
+                text-align: left;
+            }
+            
+            .final-cta h2 {
+                font-size: 32px;
+            }
+            
+            .final-cta-buttons {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .final-cta-buttons a {
+                width: 100%;
+                text-align: center;
+            }
+            
+            footer {
+                padding: 40px 20px;
+            }
+            
+            .footer-accreditations {
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                align-items: flex-start;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .phone-icon-btn {
+                width: 42px;
+                height: 42px;
+                min-width: 42px;
+                min-height: 42px;
+            }
+            
+            .phone-icon-btn svg {
+                width: 18px;
+                height: 18px;
+                min-width: 18px;
+                min-height: 18px;
+            }
+            
+            .btn-primary {
+                padding: 10px 16px;
+                font-size: 12px;
+            }
+            
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 12px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Wireframe Header -->
+    <div class="wireframe-overlay">
+        <div class="wireframe-title">CIEL JETS <span>Landing Page Wireframe</span></div>
+        <div class="wireframe-meta">Version 2.0 | December 2024 | Desktop + Mobile Responsive</div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <a href="#" class="logo">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1765861399/Screenshot_2025-12-16_at_12.02.52_hhzgez.png" alt="Ciel Jets" class="logo-img">
+        </a>
+        <div class="header-cta">
+            <a href="tel:+15618957000" class="phone-icon-btn" title="Call +1 (561) 895-7000">
+                <svg viewBox="0 0 24 24">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+            </a>
+            <a href="#quote" class="btn-primary">Get Your Quote</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <span class="section-label">Section 1: Hero</span>
+            <p class="hero-tagline">Private Aviation, Perfected</p>
+            <h1 class="hero-headline">Your Sky.<br><strong>Your Schedule.</strong></h1>
+            <p class="hero-subheadline">One call to your dedicated advisor. Immediate response. Transparent pricing. Over 11,000 aircrafts ready when you are.</p>
+            <div class="hero-ctas">
+                <a href="#quote" class="btn-primary">REQUEST YOUR QUOTE</a>
+                <a href="tel:+15618957000" class="btn-outline">CALL NOW: 561-895-7000</a>
+            </div>
+            <div class="hero-trust-badges">
+                <div class="hero-trust-badge">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12,6 12,12 16,14"/>
+                    </svg>
+                    <span>24/7 Human Support</span>
+                </div>
+                <div class="hero-trust-badge">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        <polyline points="9,12 11,14 15,10"/>
+                    </svg>
+                    <span>No Hidden Fees</span>
+                </div>
+                <div class="hero-trust-badge">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                    <span>Direct Owner Network</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote-section" id="quote">
+        <div class="quote-container">
+            <div class="quote-content">
+                <span class="section-label">Section 2: Quote Form</span>
+                <h2>Your Private<br><strong>Charter Awaits</strong></h2>
+                <p>Complete the form and your dedicated advisor will respond within minutes with tailored options and transparent pricing.</p>
+                <ul class="quote-features">
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        Immediate human response
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        Access to 11,000+ aircrafts worldwide
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        No hidden fees or surprise charges
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        Yachts, villas, and experiences available
+                    </li>
+                </ul>
+            </div>
+            <div class="quote-form">
+                <h3>Request Your Quote</h3>
+                <p class="form-subtitle">Response within 15 minutes during business hours</p>
+                <form>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" placeholder="John">
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" placeholder="Smith">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" placeholder="john@company.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="tel" placeholder="+1 (555) 000-0000">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>From</label>
+                            <input type="text" placeholder="Departure city or airport">
+                        </div>
+                        <div class="form-group">
+                            <label>To</label>
+                            <input type="text" placeholder="Arrival city or airport">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Departure Date</label>
+                            <input type="date">
+                        </div>
+                        <div class="form-group">
+                            <label>Passengers</label>
+                            <select>
+                                <option>Select passengers</option>
+                                <option>1-4 passengers</option>
+                                <option>5-8 passengers</option>
+                                <option>9-14 passengers</option>
+                                <option>15+ passengers</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label>Aircraft Preference (Optional)</label>
+                            <select>
+                                <option>No preference</option>
+                                <option>Light Jet</option>
+                                <option>Midsize Jet</option>
+                                <option>Super Midsize Jet</option>
+                                <option>Heavy Jet</option>
+                                <option>Ultra Long Range</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="form-submit">Get My Quote</button>
+                    <p class="form-note">Your information is secure and will never be shared.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pain Points Section -->
+    <section class="pain-section">
+        <div class="section-header">
+            <span class="section-label">Section 3: Pain Points + Solutions</span>
+            <h2><strong>Tired of These Charter Frustrations?</strong></h2>
+            <p>We built Ciel Jets to fix what others get wrong.</p>
+        </div>
+        <div class="pain-grid">
+            <div class="pain-card">
+                <div class="icon">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <h4>Slow Response Times</h4>
+                <p class="pain-text">Waiting hours or even days for quotes while your plans keep changing.</p>
+                <p class="fix-text"><span class="fix-label-inline">Our fix:</span> A real person answers, 24 hours a day</p>
+            </div>
+            <div class="pain-card">
+                <div class="icon">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M3 21v-2a7 7 0 0 1 7-7h4a7 7 0 0 1 7 7v2"/></svg>
+                </div>
+                <h4>No Personal Touch</h4>
+                <p class="pain-text">Feeling like just another booking number instead of a valued client.</p>
+                <p class="fix-text"><span class="fix-label-inline">Our fix:</span> A dedicated advisor who knows <span class="highlight">you by name</span></p>
+            </div>
+            <div class="pain-card">
+                <div class="icon">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><text x="12" y="16" text-anchor="middle" font-size="12" font-weight="500" fill="#c9a962" stroke="none">$</text></svg>
+                </div>
+                <h4>Hidden Fees</h4>
+                <p class="pain-text">Surprise charges that show up and inflate the final bill.</p>
+                <p class="fix-text"><span class="fix-label-inline">Our fix:</span> The price we quote is the price you pay</p>
+            </div>
+            <div class="pain-card">
+                <div class="icon">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg>
+                </div>
+                <h4>Too Many Vendors</h4>
+                <p class="pain-text">Coordinating ground transport, catering, and hotels separately.</p>
+                <p class="fix-text"><span class="fix-label-inline">Our fix:</span> Everything handled in one call</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Unique Value Proposition Section -->
+    <section class="uvp-section">
+        <div class="section-header">
+            <span class="section-label">Section 4: Unique Value Proposition</span>
+            <h2>The <strong>Ciel Jets</strong> Difference</h2>
+        </div>
+        <div class="uvp-grid">
+            <div class="uvp-card">
+                <div class="uvp-number">11,000+</div>
+                <div class="uvp-label">Aircraft Worldwide</div>
+                <h4 class="uvp-title">Global Fleet Access</h4>
+                <p class="uvp-description">Light jets to heavy long-range aircraft. Every type you need, wherever you are going.</p>
+            </div>
+            <div class="uvp-card">
+                <div class="uvp-number">24/7</div>
+                <div class="uvp-label">Human Support</div>
+                <h4 class="uvp-title">Real People, Real Answers</h4>
+                <p class="uvp-description">Your advisor picks up right away. No automated menus, no waiting on hold.</p>
+            </div>
+            <div class="uvp-card">
+                <div class="uvp-number">1</div>
+                <div class="uvp-label">Point of Contact</div>
+                <h4 class="uvp-title">Your Personal Advisor</h4>
+                <p class="uvp-description">One person who learns your preferences and handles every detail.</p>
+            </div>
+            <div class="uvp-card">
+                <div class="uvp-number">0</div>
+                <div class="uvp-label">Hidden Fees</div>
+                <h4 class="uvp-title">Honest Pricing</h4>
+                <p class="uvp-description">What we quote is what you pay. No surprises when the bill arrives.</p>
+            </div>
+            <div class="uvp-card">
+                <div class="uvp-number">Direct</div>
+                <div class="uvp-label">Owner Network</div>
+                <h4 class="uvp-title">Better Rates</h4>
+                <p class="uvp-description">We work straight with aircraft owners. No middlemen means better pricing for you.</p>
+            </div>
+            <div class="uvp-card">
+                <div class="uvp-number">All-In</div>
+                <div class="uvp-label">Luxury Solution</div>
+                <h4 class="uvp-title">Jets, Yachts, Villas</h4>
+                <p class="uvp-description">Your complete travel experience. The private jet is just the start.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Props Section -->
+    <section class="value-section">
+        <div class="section-header">
+            <span class="section-label">Section 5: Value Props</span>
+            <h2>The <strong>Ciel Jets</strong> Difference</h2>
+        </div>
+        <div class="value-grid">
+            <div class="value-card">
+                <div class="icon">
+                    <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <h4>Dedicated Advisor</h4>
+                <p>Your personal aviation expert who knows your preferences and handles every detail.</p>
+            </div>
+            <div class="value-card">
+                <div class="icon">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                </div>
+                <h4>Global Fleet Access</h4>
+                <p>11,000+ aircrafts and 3,000+ yachts through direct owner relationships.</p>
+            </div>
+            <div class="value-card">
+                <div class="icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <h4>Better Pricing</h4>
+                <p>Direct-to-owner access means better availability and competitive rates.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="process-section">
+        <div class="section-header">
+            <span class="section-label">Section 6: How It Works</span>
+            <h2>Three Steps to <strong>Takeoff</strong></h2>
+        </div>
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <h4>Share Your Trip Details</h4>
+                <p>Tell us where you need to go, when, and how many are traveling. That is all we need to start.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <h4>Review Your Options</h4>
+                <p>Your advisor presents tailored aircrafts options with transparent, all-inclusive pricing within minutes.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <h4>Fly Private</h4>
+                <p>Confirm your choice and we handle every detail. Arrive at the FBO and step directly onto your aircrafts.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+        <div class="testimonial-content">
+            <span class="section-label">Section 7: Social Proof</span>
+            <p class="testimonial-quote">"My advisor answered immediately, sent options within minutes, and the price she quoted was exactly what I paid. No surprises at all. This is how charter should work."</p>
+            <p class="testimonial-author">Executive Client</p>
+            <p class="testimonial-role">Houston, TX</p>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <span class="section-label" style="background: #0a0a0a; color: #fff;">Section 8: Final CTA</span>
+        <h2>Ready to Fly Different?</h2>
+        <p>Your dedicated advisor is standing by. Get your personalized quote now.</p>
+        <div class="final-cta-buttons">
+            <a href="#quote" class="btn-dark">Request Your Quote</a>
+            <a href="tel:+15618957000" class="btn-outline-dark">Call: +1 (561) 895-7000</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <a href="#" class="footer-logo">
+                    <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1765861399/Screenshot_2025-12-16_at_12.02.52_hhzgez.png" alt="Ciel Jets" class="footer-logo-img">
+                </a>
+                <div class="footer-contact">
+                    <a href="mailto:charter@cieljets.com">charter@cieljets.com</a>
+                </div>
+            </div>
+            <div class="footer-accreditations">
+                <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1765981132/NBAA-Logo_a2siiy.png" alt="NBAA Member" class="accreditation-img">
+                <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1765981285/certified-wyvern-broker_1_y97i3z.jpg" alt="Wyvern Certified" class="accreditation-img">
+                <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1765981132/ebaa-logo_ykpmz1.png" alt="EBAA Member" class="accreditation-img">
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
